@@ -9,6 +9,7 @@ namespace _1_17_1
 {
     public static class ArrayHandler
 
+    //  1.17. Введение в массивы
     //1
 
     {
@@ -113,11 +114,11 @@ namespace _1_17_1
 
         public static void WriteArrayToConsole(int[] arrays)
         {
-            
+
             for (int i = 0; i < arrays.Length; i++)
 
             {
-                Console.Write(arrays[i]);
+                Console.Write($"{arrays[i]} ");
             }
             Console.WriteLine();
         }
@@ -166,5 +167,47 @@ namespace _1_17_1
 
             return swapped;
         }
+
+
+
+        // 1.18.1. Отсортировка массива пузырьком по возрастанию
+
+        public static int[] Sort(int[] sortAsc)
+        {
+            for (int i = 0; i < sortAsc.Length; i++)
+            {
+                for (int j = 0; (j < sortAsc.Length - i && j < sortAsc.Length - 1); j++)
+                {
+                    if (sortAsc[j] > sortAsc[j + 1])
+                    {
+                        int tmp = sortAsc[j + 1];
+                        sortAsc[j + 1] = sortAsc[j];
+                        sortAsc[j] = tmp;
+                    }
+                }
+            }
+            return sortAsc;
+
+        }
+
+        // 1.18.2. Сортировка массива вставками по убыванию
+
+        public static int[] SortDesc(int[] sortDesc)
+        {
+            for (int i = 1; i < sortDesc.Length; i++)
+            {
+                int j = i;
+                while ((j >= 1) && (sortDesc[j - 1]< sortDesc[j]))
+                {
+                    int tmp = sortDesc[j];
+                    sortDesc[j] = sortDesc[j - 1];
+                    sortDesc[j - 1] = tmp;
+                    j = j - 1;
+                }
+            }
+            return sortDesc;
+        }
+
+
     }
 }
