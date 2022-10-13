@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
+﻿
 namespace _1_17_1
 {
     public static class ArrayHandler
 
     //  1.17. Введение в массивы
     //1
-
     {
         public static int FindMinElementOfArray(int[] arrays)
         {
@@ -23,9 +16,9 @@ namespace _1_17_1
                     min = arrays[i];
                 }
             }
+
             return min;
         }
-
 
         //2
         public static int FindMaxElementOfArray(int[] arrays)
@@ -38,14 +31,13 @@ namespace _1_17_1
                     max = arrays[i];
                 }
             }
+
             return max;
         }
 
         //3
-
         public static int FindIndexOfMinElementOfArray(int[] arrays)
         {
-
             int min = arrays[0];
             int n = 0;
             for (int i = 1; i < arrays.Length; i++)
@@ -56,14 +48,13 @@ namespace _1_17_1
                     n = i;
                 }
             }
+
             return n;
         }
 
         //4
-
         public static int FindIndexOfMaxElementOfArray(int[] arrays)
         {
-
             int max = arrays[0];
             int n = 0;
             for (int i = 1; i < arrays.Length; i++)
@@ -74,14 +65,13 @@ namespace _1_17_1
                     n = i;
                 }
             }
+
             return n;
         }
 
         //5
-
         public static int SummElementsWithOddIndexOfArray(int[] arrays)
         {
-
             int n = 0;
             int summ = 0;
             for (int i = 0; i < arrays.Length; i++)
@@ -93,11 +83,11 @@ namespace _1_17_1
                     summ = summ + arrays[i];
                 }
             }
+
             return summ;
         }
 
         //6
-
         public static int[] MirroredArray(int[] arrays)
         {
             int[] mirrow = new int[arrays.Length];
@@ -107,16 +97,14 @@ namespace _1_17_1
                 k = k + 1;
                 mirrow[k] = arrays[i];
             }
+
             return mirrow;
         }
 
         //6.1
-
         public static void WriteArrayToConsole(int[] arrays)
         {
-
             for (int i = 0; i < arrays.Length; i++)
-
             {
                 Console.Write($"{arrays[i]} ");
             }
@@ -124,7 +112,6 @@ namespace _1_17_1
         }
 
         //7
-
         public static int CountOddElementsInArray(int[] arrays)
         {
             int count = 0;
@@ -136,11 +123,11 @@ namespace _1_17_1
                     count = count + 1;
                 }
             }
+
             return count;
         }
 
         //8
-
         public static int[] SwappedHalfOTheArray(int[] arrays)
         {
             int[] swapped = new int[arrays.Length];
@@ -148,7 +135,7 @@ namespace _1_17_1
             int count = 0;
             for (int i = 0; i < arrays.Length; i++)
             {
-                count = count + 1;
+                count += 1;
             }
 
             int leftEven = count / 2;
@@ -156,13 +143,13 @@ namespace _1_17_1
             for (int j = 0; j < leftEven; j++)
             {
                 swapped[index] = arrays[j];
-                index = index + 1;
+                index += 1;
             }
             index = 0;
             for (int k = leftEven; k <= count - 1; k++)
             {
                 swapped[index] = arrays[k];
-                index = index + 1;
+                index += 1;
             }
 
             return swapped;
@@ -171,7 +158,6 @@ namespace _1_17_1
 
 
         // 1.18.1. Отсортировка массива пузырьком по возрастанию
-
         public static int[] Sort(int[] sortAsc)
         {
             for (int i = 0; i < sortAsc.Length; i++)
@@ -186,18 +172,18 @@ namespace _1_17_1
                     }
                 }
             }
+
             return sortAsc;
 
         }
 
         // 1.18.2. Сортировка массива вставками по убыванию
-
         public static int[] SortDesc(int[] sortDesc)
         {
             for (int i = 1; i < sortDesc.Length; i++)
             {
                 int j = i;
-                while ((j >= 1) && (sortDesc[j - 1]< sortDesc[j]))
+                while ((j >= 1) && (sortDesc[j - 1] < sortDesc[j]))
                 {
                     int tmp = sortDesc[j];
                     sortDesc[j] = sortDesc[j - 1];
@@ -205,9 +191,8 @@ namespace _1_17_1
                     j = j - 1;
                 }
             }
+
             return sortDesc;
         }
-
-
     }
 }
